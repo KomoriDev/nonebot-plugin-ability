@@ -1,0 +1,43 @@
+[project]
+name = "nonebot-plugin-ability"
+version = "0.1.0"
+description = "NoneBot 外置电池"
+authors = [
+    { name = "Komorebi", email = "mute231010@gmail.com" },
+]
+dependencies = [
+    "httpx>=0.25.0",
+    "nonebot2[fastapi]>=2.1.0",
+    "nonebot-plugin-alconna>=0.25.1",
+    "ujson>=5.8.0",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pre-commit>=3.4.0",
+    "black>=23.9.1",
+    "ruff>=0.0.291",
+]
+test = [
+    "nonebug>=0.3.5",
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311"]
+
+[tool.ruff]
+ignore = ["E402"]
+
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.flake8-annotations]
+suppress-dummy-args = true
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
